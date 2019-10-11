@@ -1,0 +1,87 @@
+intents:
+  - request_certificate:
+      use_entities: []
+  - chitchat:
+      use_entities: []
+  - inform
+  - affirm
+  - deny
+  - stop
+  - thankyou
+  - greet
+  - bot_challenge
+
+entities:
+  - certif_type
+  - period
+  - purpose
+  - details
+  - langue
+
+slots:
+  certif_type:
+    type: unfeaturized
+    auto_fill: false
+  period:
+    type: unfeaturized
+    auto_fill: false
+  purpose:
+    type: unfeaturized
+    auto_fill: false
+  details:
+    type: unfeaturized
+    auto_fill: false
+  langue:
+    type: unfeaturized
+    auto_fill: false
+  requested_slot:
+    type: unfeaturized
+
+templates:
+  utter_ask_certificate:
+    - text: "what certificate?"
+  utter_ask_period:
+    - text: "which date suits you?"
+  utter_ask_purpose:
+    - text: "for what purpose?"
+  utter_ask_details:
+    - text: "please provide additional details"
+  utter_ask_langue:
+    - text: "in which language you want it (FR or EN)?"
+  utter_submit:
+    - text: "All done!"
+  utter_slots_values:
+    - text: "your request is under review following the parameters:\n
+             - certificate: {certif_type}\n
+             - period: {period}\n
+             - purpose: {purpose}\n
+             - details: {details}\n"
+  utter_noworries:
+    - text: "you are welcome :)"
+  utter_chitchat:
+    - text: "chitchat"
+  utter_ask_continue:
+    - text: "do you want to continue?"
+  utter_wrong_certif_type:
+    - text: "certificate type is not in the database, please try again"
+  utter_wrong_period:
+    - text: "date should be greater than current date, please try again"
+  utter_wrong_langue:
+    - text: "please provide a correct langue (FR or EN), please try again"
+  utter_default:
+    - text: "sorry, I didn't understand you, please try input something else"
+  utter_greet:
+    - text: "Hello! I am certificate search assistant! How can I help?"
+  utter_iamabot:
+    - text: "I am a bot, powered by xHub."
+
+actions:
+  - utter_slots_values
+  - utter_noworries
+  - utter_chitchat
+  - utter_ask_continue
+  - utter_greet
+  - utter_iamabot
+
+forms:
+  - certificate_form
