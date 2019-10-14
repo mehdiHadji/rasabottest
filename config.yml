@@ -13,7 +13,8 @@ pipeline:
       - number
 
 policies:
-  - name: FallbackPolicy
   - name: MemoizationPolicy
+  - name: FallbackPolicy
+  - name: KerasPolicy
   - name: FormPolicy
   - name: MappingPolicy
