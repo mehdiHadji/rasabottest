@@ -17,6 +17,8 @@ entities:
   - purpose
   - details
   - langue
+  - copies_num
+  - endroit
 
 slots:
   certif_type:
@@ -34,6 +36,12 @@ slots:
   langue:
     type: unfeaturized
     auto_fill: false
+  copies_num:
+    type: unfeaturized
+    auto_fill: false
+  endroit:
+    type: unfeaturized
+    auto_fill: false
   requested_slot:
     type: unfeaturized
 
@@ -48,6 +56,10 @@ templates:
     - text: "please provide additional details"
   utter_ask_langue:
     - text: "in which language you want it (FR or EN)?"
+  utter_ask_copies_num:
+    - text: "how many copy you want?"
+  utter_ask_endroit:
+    - text: "wich endroit?"
   utter_submit:
     - text: "All done!"
   utter_slots_values:
@@ -55,7 +67,10 @@ templates:
              - certificate: {certif_type}\n
              - period: {period}\n
              - purpose: {purpose}\n
-             - details: {details}\n"
+             - details: {details}\n
+             - copies: {copies_num}\n
+             - langue: {langue}\n
+             - endroit: {endroit}"
   utter_noworries:
     - text: "you are welcome :)"
   utter_chitchat:
@@ -68,6 +83,10 @@ templates:
     - text: "date should be greater than current date, please try again"
   utter_wrong_langue:
     - text: "please provide a correct langue (FR or EN), please try again"
+  utter_wrong_copies_num:
+    - text: "please provide a correct number (positive and not null), please try again"
+  utter_wrong_endroit:
+    - text: "please provide a correct endroit, please try again"
   utter_default:
     - text: "sorry, I didn't understand you, please try input something else"
   utter_greet:
