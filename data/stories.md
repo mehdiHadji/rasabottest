@@ -169,14 +169,9 @@
 * affirm
     - certificate_form  <!-- FormPolicy predicted FormValidation(False), other policy predicted certificate_form -->
     - slot{"requested_slot": "langue"}
-
-
-
-
-
 * form: affirm
     - form: certificate_form
-    - slot{"langue": true}
+    - slot{"langue": "fr"}
     - slot{"requested_slot": "purpose"}
 * form: inform
     - form: certificate_form
