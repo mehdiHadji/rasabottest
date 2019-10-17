@@ -1,4 +1,5 @@
 ## intent:greet
+- hi
 - Hi
 - Hey
 - Hi bot
@@ -28,11 +29,15 @@
 - hey bot!
 - hello friend
 
-## intent:request_certificate
+## intent:request_unknown_certificate
 - im looking for a certificate
 - certificate please
 - find me a certificate
 - id like a certificate
+- give me a certificate
+- i need a certificate
+
+## intent:request_certificate
 - find me a [work certificate](certif_type)
 - look for a [work certificate](certif_type)
 - i'm looking for a [work certificate](certif_type)
@@ -93,44 +98,6 @@
 - i want a [pay statement](certif_type)
 - can i get a [pay statement](certif_type)
 - can i have a [pay statement](certif_type)
-- for [tomorrow](period)
-- for [monday](period)
-- for [tuesday](period)
-- for [wednesday](period)
-- for [thursday](period)
-- for [friday](period)
-- for [saturday](period)
-- for [sunday](period)
-- i need it for [tomorrow morning](period)
-- i need it for [monday morning](period)
-- i need it for [tuesday morning](period)
-- i need it for [wednesday morning](period)
-- i need it for [thursday morning](period)
-- i need it for [friday morning](period)
-- i need it for [saturday morning](period)
-- i need it for [sunday morning](period)
-- [next monday](period)
-- [next tuesday](period)
-- [next wednesday](period)
-- [next thursday](period)
-- [next friday](period)
-- [next saturday](period)
-- [next sunday](period)
-- [monday](period)
-- [tuesday](period)
-- [wednesday](period)
-- [thursday](period)
-- [friday](period)
-- [saturday](period)
-- [sunday](period)
-- for [next weekend](period)
-- [27/10/2019](period)
-- written in [FR](langue)
-- written in [FR](langue)
-- in [FR](langue)
-- in [EN](langue)
-- [FR](langue)
-- [EN](langue)
 
 ## intent:affirm
 - correct
@@ -159,94 +126,6 @@
 - breath no
 - do you have something else
 - no this does not work for me
-
-## intent:inform
-- [work certificate](certif_type)
-- [salary certificate](certif_type)
-- [leave authorization](certif_type)
-- [mission order](certif_type)
-- [pay statement](certif_type)
-- [expense report](certif_type)
-- im looking for [work certificate](certif_type)
-- im looking for [salary certificate](certif_type)
-- im looking for [leave authorization](certif_type)
-- im looking for [mission order](certif_type)
-- im looking for [pay statement](certif_type)
-- im looking for [expense report](certif_type)
-- id like [work certificate](certif_type)
-- id like [salary certificate](certif_type)
-- id like [leave authorization](certif_type)
-- id like [mission order](certif_type)
-- id like [pay statement](certif_type)
-- id like [expense report](certif_type)
-- can i get [work certificate](certif_type)
-- can i get [salary certificate](certif_type)
-- can i get [leave authorization](certif_type)
-- can i get [mission order](certif_type)
-- can i get [pay statement](certif_type)
-- can i get [expense report](certif_type)
-- i want [work certificate](certif_type)
-- i want [salary certificate](certif_type)
-- i want [leave authorization](certif_type)
-- i want [mission order](certif_type)
-- i want [pay statement](certif_type)
-- i want [expense report](certif_type)
-- i would like [work certificate](certif_type)
-- i would like [salary certificate](certif_type)
-- i would like [leave authorization](certif_type)
-- i would like [mission order](certif_type)
-- i would like [pay statement](certif_type)
-- i would like [expense report](certif_type)
-- looking for [leave authorization](certif_type) certificate
-- looking for [mission order](certif_type) certificate
-- looking for [pay statement](certif_type) certificate
-- looking for [salary certificate](certif_type) certificate
-- looking for [work certificate](certif_type) certificate
-- looking for [expense report](certif_type) certificate
-- hi im looking for [leave authorization](certif_type) certificate
-- hi im looking for [mission order](certif_type) certificate
-- hi im looking for [pay statement](certif_type) certificate
-- hi im looking for [salary certificate](certif_type) certificate
-- hi im looking for [work certificate](certif_type) certificate
-- hi im looking for [expense report](certif_type) certificate
-- for [tomorrow](period)
-- for [monday](period)
-- for [tuesday](period)
-- for [wednesday](period)
-- for [thursday](period)
-- for [friday](period)
-- for [saturday](period)
-- for [sunday](period)
-- i need it for [tomorrow morning](period)
-- i need it for [monday morning](period)
-- i need it for [tuesday morning](period)
-- i need it for [wednesday morning](period)
-- i need it for [thursday morning](period)
-- i need it for [friday morning](period)
-- i need it for [saturday morning](period)
-- i need it for [sunday morning](period)
-- [next monday](period)
-- [next tuesday](period)
-- [next wednesday](period)
-- [next thursday](period)
-- [next friday](period)
-- [next saturday](period)
-- [next sunday](period)
-- [monday](period)
-- [tuesday](period)
-- [wednesday](period)
-- [thursday](period)
-- [friday](period)
-- [saturday](period)
-- [sunday](period)
-- for [next weekend](period)
-- [27/10/2019](period)
-- written in [FR](langue)
-- written in [FR](langue)
-- in [FR](langue)
-- in [EN](langue)
-- [FR](langue)
-- [EN](langue)
 
 ## intent:thankyou
 - um thank you good bye
@@ -277,45 +156,6 @@
 - thank you bye
 - um okay thank you good bye
 
-## intent:chitchat
-- can you share your boss with me?
-- i want to get to know your owner
-- i want to know the company which designed you
-- i want to know the company which generated you
-- i want to know the company which invented you
-- i want to know who invented you
-- May I ask who invented you?
-- please tell me the company who created you
-- please tell me who created you
-- tell me more about your creators
-- tell me more about your founders
-- Ahoy matey how are you?
-- are you alright
-- are you having a good day
-- Are you ok?
-- are you okay
-- Do you feel good?
-- how are things going
-- how are things with you?
-- How are things?
-- how are you
-- how are you doing
-- how are you doing this morning
-- how are you feeling
-- how are you today
-- How are you?
-- How is the weather today?
-- What's the weather like?
-- How is the weather?
-- What is the weather at your place?
-- Do you have good weather?
-- Is it raining?
-- What's it like out there?
-- Is it hot or cold?
-- Beautiful day, isn't it?
-- What's the weather forecast?
-- Is it quite breezy outside?
-
 ## intent:stop
 - ok then you cant help me
 - that was shit, you're not helping
@@ -342,3 +182,22 @@
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
+
+## intent:goodbye
+- Bye 
+- Goodbye
+- See you later
+- Bye bot
+- Goodbye friend
+- bye
+- bye for now
+- catch you later
+- gotta go
+- See you
+- goodnight
+- have a nice day
+- i'm off
+- see you later alligator
+- we'll speak soon
+- end
+- finish
