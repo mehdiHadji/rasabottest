@@ -5,7 +5,7 @@ from rasa_sdk.forms import FormAction
 from datetime import datetime
 from slackclient import SlackClient
 
-SLACK_BOT_TOKEN = "xoxb-774540282707-781128700355-8MscTytuxmkbgoqdMGpefZGm"
+SLACK_BOT_TOKEN = "xoxb-774540282707-787400871075-jVOFSnMymRpWPe6q1v90AW4W"
 slack_client = SlackClient(SLACK_BOT_TOKEN)
 
 
@@ -32,6 +32,8 @@ class CertificateForm(FormAction):
             return ["langue","copies_num"]
         if tracker.get_slot("certif_type") == "mission order":
             return ["endroit","period","purpose"]
+        if tracker.get_slot("certif_type") == "leave authorization":
+            return ["dep_date", "dep_date_half_day", "end_date", "end_date_half_day"]
         else:
             return ["certif_type", "period", "purpose", "details", "langue","endroit"]
 
@@ -45,6 +47,10 @@ class CertificateForm(FormAction):
             "langue": [self.from_entity(entity="langue"), self.from_text()],
             "copies_num": [self.from_entity(entity="copies_num"), self.from_text()],
             "endroit": [self.from_entity(entity="endroit"), self.from_text()],
+            "dep_date": [self.from_entity(entity="endroit"), self.from_text()],
+            "dep_date_half_day": [self.from_entity(entity="endroit"), self.from_text()],
+            "end_date": [self.from_entity(entity="endroit"), self.from_text()],
+            "end_date_half_day": [self.from_entity(entity="endroit"), self.from_text()],
         }
 
 
@@ -148,17 +154,92 @@ class CertificateForm(FormAction):
             return dispatcher.utter_template("utter_wrong_endroit", tracker)
 
 
-    def submit(
+    def validate_dep_date(
         self,
+        value: Text,
         dispatcher: CollectingDispatcher,
         tracker: Tracker,
         domain: Dict[Text, Any],
-    ) -> List[Dict]:
-        """Define what the form has to do
-            after all required slots are filled"""
+    ) -> Dict[Text, Any]:
 
-        # utter submit template
+        if value.lower() in self.period_db():
+            return {"dep_date": value}
+        else:
+            dispatcher.utter_template("utter_wrong_dep_date", tracker)
+            return {"dep_date": None}
 
 
-        dispatcher.utter_template("utter_submit", tracker)
-        return []
+    def validate_end_date(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+
+        if value.lower() in self.period_db():
+            return {"end_date": value}
+        else:
+            dispatcher.utter_template("utter_wrong_end_date", tracker)
+            return {"end_date": None}
+
+
+    def validate_dep_date_sshalf_day(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+
+        if isinstance(value, str):
+            if "yes" in value:
+                return {"dep_date_half_day": True}
+            elif "no" in value:
+                return {"dep_date_half_day": False}
+            else:
+                dispatcher.utter_template("utter_wrong_dep_date_half_day", tracker)
+                return {"dep_date_half_day": None}
+
+        else:
+            return {"dep_date_half_day": value}
+
+
+    def validate_end_date_half_day(
+        self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+
+        if isinstance(value, str):
+            if "yes" in value:
+                return {"end_date_half_day": True}
+            elif "no" in value:
+                return {"end_date_half_day": False}
+            else:
+                dispatcher.utter_template("utter_wrong_end_date_half_day", tracker)
+                return {"end_date_half_day": None}
+
+        else:
+            return {"end_date_half_day": value}
+
+
+    def submit(self,dispatcher: CollectingDispatcher,tracker: Tracker,domain: Dict[Text, Any],) -> List[Dict]:
+        certificate_type = tracker.get_slot('certif_type')
+        if certificate_type == "work certificate" or certificate_type == "salary certificate":
+            dispatcher.utter_template("utter_submit_work_salary_certificate", tracker)
+            return []
+        
+        if certificate_type == "expense report":
+            dispatcher.utter_template("utter_submit_expense_report", tracker)
+            return []
+        
+        if certificate_type == "mission order":
+            dispatcher.utter_template("utter_submit_mission_order", tracker)
+            return []
+        
+        if certificate_type == "leave authorization":
+            dispatcher.utter_template("utter_submit_leave_authorization", tracker)
+            return []
