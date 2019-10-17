@@ -15,6 +15,11 @@ pipeline:
 policies:
   - name: MemoizationPolicy
   - name: FallbackPolicy
+    nlu_threshold: 0.4
+    core_threshold: 0.3
+    fallback_action_name: "utter_unclear"
   - name: KerasPolicy
   - name: FormPolicy
   - name: MappingPolicy
+    
+    
