@@ -64,7 +64,7 @@ slots:
 
 templates:
   utter_ask_certificate:
-    - text: "which type of certificate?"
+  - text: "which type of certificate ?"
   utter_ask_period:
     - text: "which date suits you?"
   utter_ask_purpose:
@@ -73,6 +73,11 @@ templates:
     - text: "please provide additional details"
   utter_ask_langue:
     - text: "in which language you want it (FR or EN)?"
+      buttons:
+      - title: "Fr"
+        payload: "/affirm"
+      - title: "En"
+        payload: "/affirm"
   utter_ask_copies_num:
     - text: "how many copy you want?"
   utter_ask_endroit:
@@ -81,12 +86,22 @@ templates:
     - text: "please provide the departure date"
   utter_ask_dep_date_half_day:
     - text: "half day (yes or no)?"
+      buttons:
+      - title: "Yes"
+        payload: "/affirm"
+      - title: "No"
+        payload: "/affirm"
   utter_ask_end_date:
     - text: "please provide the end date"
   utter_ask_end_date_half_day:
     - text: "half day (yes or no)?"
+      buttons:
+      - title: "Yes"
+        payload: "/affirm"
+      - title: "No"
+        payload: "/affirm"
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye!"
   utter_submit:
     - text: "All done!"
   utter_submit_work_salary_certificate:
@@ -142,8 +157,18 @@ templates:
   utter_iamabot:
     - text: "I am a bot, powered by xHub."
   utter_ask_certif_type:
-    - text: "which type of certificate?"
-
+    - text: 'which type of certificate ?'
+      buttons:
+      - title: "salary certificate"
+        payload: '/request_certificate{"certif_type":"salary certificate"}'
+      - title: "work certificate"
+        payload: '/request_certificate{"certif_type":"work certificate"}'
+      - title: "mission order"
+        payload: '/request_certificate{"certif_type":"salary certificate"}'
+      - title: "expense report"
+        payload: '/request_certificate{"certif_type":"salary certificate"}'
+      - title: "leave authorization"
+        payload: '/request_certificate{"certif_type":"salary certificate"}'
 actions:
   - utter_noworries
   - utter_ask_continue
