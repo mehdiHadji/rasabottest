@@ -29,6 +29,21 @@
 - hey bot!
 - hello friend
 
+## intent:inform
+- [fr](langue)
+- [en](langue)
+- [es](langue)
+- [Fr](langue)
+- [En](langue)
+- [Es](langue)
+- [FR](langue)
+- [EN](langue)
+- [ES](langue)
+- [french](langue)
+- [english](langue)
+- [French](langue)
+- [English](langue)
+
 ## intent:request_unknown_certificate
 - im looking for a certificate
 - certificate please

@@ -5,7 +5,7 @@ from rasa_sdk.forms import FormAction
 from datetime import datetime
 from slackclient import SlackClient
 
-SLACK_BOT_TOKEN = "xoxb-774540282707-787400871075-jVOFSnMymRpWPe6q1v90AW4W"
+SLACK_BOT_TOKEN = "xoxb-774540282707-800435998613-mluSTusyhNPPEYzaLUHe2Y0g"
 slack_client = SlackClient(SLACK_BOT_TOKEN)
 
 
@@ -47,10 +47,10 @@ class CertificateForm(FormAction):
             "langue": [self.from_entity(entity="langue"), self.from_text()],
             "copies_num": [self.from_entity(entity="copies_num"), self.from_text()],
             "endroit": [self.from_entity(entity="endroit"), self.from_text()],
-            "dep_date": [self.from_entity(entity="endroit"), self.from_text()],
-            "dep_date_half_day": [self.from_entity(entity="endroit"), self.from_text()],
-            "end_date": [self.from_entity(entity="endroit"), self.from_text()],
-            "end_date_half_day": [self.from_entity(entity="endroit"), self.from_text()],
+            "dep_date": [self.from_entity(entity="dep_date"), self.from_text()],
+            "dep_date_half_day": [self.from_entity(entity="dep_date_half_day"), self.from_text()],
+            "end_date": [self.from_entity(entity="end_date"), self.from_text()],
+            "end_date_half_day": [self.from_entity(entity="end_date_half_day"), self.from_text()],
         }
 
 
@@ -119,7 +119,7 @@ class CertificateForm(FormAction):
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
 
-        if value in self.langue_db():
+        if value.lower() in self.langue_db():
             return {"langue": value}
         else:
             return dispatcher.utter_template("utter_wrong_langue", tracker)
