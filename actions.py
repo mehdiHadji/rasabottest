@@ -5,7 +5,7 @@ from rasa_sdk.forms import FormAction
 from datetime import datetime
 from slackclient import SlackClient
 
-SLACK_BOT_TOKEN = "xoxb-774540282707-800435998613-mluSTusyhNPPEYzaLUHe2Y0g"
+SLACK_BOT_TOKEN = "xoxb-774540282707-799641687825-gcW2Yw608htuosb9jJkt4CXY"
 slack_client = SlackClient(SLACK_BOT_TOKEN)
 
 
@@ -45,7 +45,7 @@ class CertificateForm(FormAction):
             "purpose": [self.from_entity(entity="purpose"), self.from_text()],
             "details": [self.from_entity(entity="details"), self.from_text()],
             "langue": [self.from_entity(entity="langue"), self.from_text()],
-            "copies_num": [self.from_entity(entity="copies_num"), self.from_text()],
+            "copies_num": [self.from_entity(entity="copies_num", intent=["inform"]),self.from_entity(entity="number"),],
             "endroit": [self.from_entity(entity="endroit"), self.from_text()],
             "dep_date": [self.from_entity(entity="dep_date"), self.from_text()],
             "dep_date_half_day": [self.from_entity(entity="dep_date_half_day"), self.from_text()],
@@ -214,10 +214,10 @@ class CertificateForm(FormAction):
     ) -> Dict[Text, Any]:
 
         if isinstance(value, str):
-            if "yes" in value:
-                return {"end_date_half_day": True}
-            elif "no" in value:
-                return {"end_date_half_day": False}
+            if value == "yes":
+                return {"end_date_half_day": value}
+            elif value == "no":
+                return {"end_date_half_day": value}
             else:
                 dispatcher.utter_template("utter_wrong_end_date_half_day", tracker)
                 return {"end_date_half_day": None}
@@ -229,17 +229,17 @@ class CertificateForm(FormAction):
     def submit(self,dispatcher: CollectingDispatcher,tracker: Tracker,domain: Dict[Text, Any],) -> List[Dict]:
         certificate_type = tracker.get_slot('certif_type')
         if certificate_type == "work certificate" or certificate_type == "salary certificate":
-            dispatcher.utter_template("utter_submit_work_salary_certificate", tracker)
+            dispatcher.utter_template("utter_submit_work_salary_certificate", tracker, **tracker.slots)
             return []
         
         if certificate_type == "expense report":
-            dispatcher.utter_template("utter_submit_expense_report", tracker)
+            dispatcher.utter_template("utter_submit_expense_report", tracker, **tracker.slots)
             return []
         
         if certificate_type == "mission order":
-            dispatcher.utter_template("utter_submit_mission_order", tracker)
+            dispatcher.utter_template("utter_submit_mission_order", tracker, **tracker.slots)
             return []
         
         if certificate_type == "leave authorization":
-            dispatcher.utter_template("utter_submit_leave_authorization", tracker)
+            dispatcher.utter_template("utter_submit_leave_authorization", tracker, **tracker.slots)
             return []

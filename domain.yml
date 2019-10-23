@@ -24,6 +24,7 @@ entities:
   - dep_date_half_day
   - end_date
   - end_date_half_day
+  - number
 
 slots:
   certif_type:

@@ -43,6 +43,22 @@
 - [english](langue)
 - [French](langue)
 - [English](langue)
+- make [four](copies_num:4) copies
+- make [one](copies_num:1) copy
+- [ten](copies_num:10) copies
+- just [one](copies_num:1) copy
+- i need [seven](copies_num:7) copies
+- i need [one](copies_num:1) copy
+- i want [seven](copies_num:7) copies
+- i want [seven](copies_num:7) copy
+- 2[copies_num] please
+- 3[copies_num] 
+- 10[copies_num] 
+- 4[copies_num] copies please
+- 13[copies_num] copies please 
+- 11[copies_num] copies please
+- [nine](copies_num:9) copies
+
 
 ## intent:request_unknown_certificate
 - im looking for a certificate
