@@ -4,8 +4,11 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from datetime import datetime
 from slackclient import SlackClient
+import requests
+import json
 
-SLACK_BOT_TOKEN = "xoxb-774540282707-799641687825-gcW2Yw608htuosb9jJkt4CXY"
+SLACK_BOT_TOKEN = "xoxb-774540282707-808115298183-veaEbql3FSGntJs1NxMIO7mD"
+API_ENDPOINT = "http://localhost:5000/setdata"
 slack_client = SlackClient(SLACK_BOT_TOKEN)
 
 
@@ -229,6 +232,12 @@ class CertificateForm(FormAction):
     def submit(self,dispatcher: CollectingDispatcher,tracker: Tracker,domain: Dict[Text, Any],) -> List[Dict]:
         certificate_type = tracker.get_slot('certif_type')
         if certificate_type == "work certificate" or certificate_type == "salary certificate":
+            email = slackitems(tracker)[0]
+            username = slackitems(tracker)[1]
+            #change them in respect to saad requirements
+            body = {'username': username, "mail":email, "langue":tracker.slots['langue'],"copies_num":tracker.slots['copies_num']}
+            headers = {'content-type': 'application/json'}
+            post_data = requests.post(API_ENDPOINT, data = json.dumps(body),headers=headers)
             dispatcher.utter_template("utter_submit_work_salary_certificate", tracker, **tracker.slots)
             return []
         
