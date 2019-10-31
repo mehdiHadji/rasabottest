@@ -9,8 +9,9 @@ pipeline:
   - name: EmbeddingIntentClassifier
   - name: DucklingHTTPExtractor
     url: http://localhost:8000
-    dimensions:
-      - number
+    dimensions: ["time", "duration","number"]
+    timezone: "Etc/GMT+1"
+
 
 policies:
   - name: MemoizationPolicy
@@ -21,5 +22,3 @@ policies:
   - name: KerasPolicy
   - name: FormPolicy
   - name: MappingPolicy
-    
-    
