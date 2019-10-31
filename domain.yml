@@ -27,6 +27,9 @@ entities:
   - number
 
 slots:
+  time:
+    type: text
+    auto_fill: false
   certif_type:
     type: unfeaturized
     auto_fill: false
