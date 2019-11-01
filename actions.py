@@ -6,8 +6,9 @@ from datetime import datetime
 from slackclient import SlackClient
 import requests
 import json
+from datetime import datetime, date
 
-SLACK_BOT_TOKEN = "xoxb-774540282707-807010447156-DarOEvj5aPXmZwwt5jxj5QG3"
+SLACK_BOT_TOKEN = "xoxb-774540282707-818204875943-zX6tLWkdEInFwRyn8hsyUtLK"
 API_ENDPOINT = "http://localhost:5000/setdata"
 slack_client = SlackClient(SLACK_BOT_TOKEN)
 
@@ -19,6 +20,31 @@ def slackitems(tracker):
     email = userinfo['user']['profile']['email']
     real_name = userinfo['user']['profile']['real_name']
     return email, real_name
+
+
+def validate_date(date_input,marge):
+    dep_dat = datetime.fromisoformat(date_input)
+    now = datetime.now()
+    t1 = date(year = dep_dat.year, month = dep_dat.month, day = dep_dat.day)
+    t2 = date(year = now.year, month = now.month, day = now.day)
+    delta = t1 - t2
+    if delta.days > marge or delta.days < 0:
+        return False
+    else:
+        return True
+
+
+def validate_period_date(date_deb, date_end):
+    dep_dat = datetime.fromisoformat(date_deb)
+    end_dat = datetime.fromisoformat(date_end)
+    t1 = date(year = dep_dat.year, month = dep_dat.month, day = dep_dat.day)
+    t2 = date(year = end_dat.year, month = end_dat.month, day = end_dat.day)
+    delta = t2 - t1
+    if delta.days >= 0:
+        return True
+    else:
+        return False
+
 
 
 class CertificateForm(FormAction):
@@ -157,26 +183,18 @@ class CertificateForm(FormAction):
             return dispatcher.utter_template("utter_wrong_endroit", tracker)
 
 
-    def validate_dep_date(
-                    self,
-                    value: Text,
-                    dispatcher: CollectingDispatcher,
-                    tracker: Tracker,
-                    domain: Dict[Text, Any],
-                ) -> Dict[Text, Any]:
-            
-                    connection_file = open('learning_data.json', 'r')
-                    learn_data = json.load(connection_file)
-                    connection_file.close()
-
-                    time_slot = tracker.get_slot("time") if tracker.get_slot("time") is not None else learn_data["time"]
-                    return {"dep_date": time_slot}
-                    
-                    """if value.lower() in self.period_db():
-                                                                                    return {"dep_date": time_slot}
-                                                                                else:
-                                                                                    dispatcher.utter_template("utter_wrong_dep_date", tracker)
-                                                                                    return {"dep_date": None}"""
+    def validate_dep_date(self,
+        value: Text,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        
+        if validate_date(value,30):
+            return {"dep_date": value}
+        else:
+            dispatcher.utter_template("utter_wrong_dep_date", tracker)
+            return {"dep_date": None}
 
 
     def validate_end_date(
@@ -187,7 +205,7 @@ class CertificateForm(FormAction):
         domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
 
-        if value.lower() in self.period_db():
+        if validate_period_date(tracker.slots['dep_date'],value):
             return {"end_date": value}
         else:
             dispatcher.utter_template("utter_wrong_end_date", tracker)
@@ -298,6 +316,11 @@ class CertificateForm(FormAction):
             "end_date":tracker.slots['end_date'],
             "end_date_half_day":tracker.slots['end_date_half_day']
             }
+
+            print("##-------------")
+            print(body)
+            print("##-------------")
+
             headers = {'content-type': 'application/json'}
             post_data = requests.post(API_ENDPOINT, data = json.dumps(body),headers=headers)
             dispatcher.utter_template("utter_submit_leave_authorization", tracker, **tracker.slots)
