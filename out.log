@@ -1,0 +1,26 @@
+2019-11-19 18:06:21,271 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-19 18:07:02,188 [ERROR]  Exception occurred while handling uri: 'http://0485e34a.ngrok.io/'
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\router.py", line 446, in _get
+    raise method_not_supported
+sanic.exceptions.MethodNotSupported: Method POST not allowed for URL /
+2019-11-19 18:07:04,504 [ERROR]  Exception occurred while handling uri: 'http://0485e34a.ngrok.io/'
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\router.py", line 446, in _get
+    raise method_not_supported
+sanic.exceptions.MethodNotSupported: Method POST not allowed for URL /
+2019-11-19 18:08:12,206 [WARNI]  Could not parse timestamp feade62ee4a94b4abaccfa75d92324eb. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'feade62ee4a94b4abaccfa75d92324eb'
+2019-11-19 18:08:27,903 [WARNI]  Could not parse timestamp 6fca2140045645449280e718c006f4c5. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '6fca2140045645449280e718c006f4c5'
+2019-11-19 18:12:33,414 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-19 18:15:29,787 [WARNI]  Could not parse timestamp 376920ab220f4bb6b441ac4ef927bb2d. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '376920ab220f4bb6b441ac4ef927bb2d'
+2019-11-19 18:19:46,080 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-19 18:29:39,956 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-20 15:29:17,702 [INFO ]  Starting Rasa server on http://localhost:5002
