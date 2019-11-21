@@ -24,6 +24,7 @@ entities:
   - dep_date_half_day
   - end_date
   - end_date_half_day
+  - number
 
 slots:
   certif_type:
@@ -73,55 +74,18 @@ templates:
     - text: "please provide additional details"
   utter_ask_langue:
     - text: "in which language you want it (FR or EN)?"
-      buttons:
-      - title: "Fr"
-        payload: '/inform{"langue":"fr"}'
-      - title: "En"
-        payload: '/inform{"langue":"en"}'
   utter_ask_copies_num:
     - text: "how many copy you want? "
   utter_ask_endroit:
     - text: "wich endroit?"
   utter_ask_dep_date:
-    - custom:
-        blocks:
-          - type: section
-            text:
-              text: "please provide the departure date"
-              type: mrkdwn
-            accessory:
-              type: datepicker
-              initial_date: "2019-11-01"
-              placeholder:
-                type: plain_text
-                text: Select a date
+    - text: "please provide the departure date"
   utter_ask_dep_date_half_day:
     - text: "half day (yes or no)?"
-      buttons:
-      - title: "yes"
-        payload: 'yes'
-      - title: "no"
-        payload: 'no'
   utter_ask_end_date:
-    - custom:
-        blocks:
-          - type: section
-            text:
-              text: "please provide the end date"
-              type: mrkdwn
-            accessory:
-              type: datepicker
-              initial_date: '2019-11-01'
-              placeholder:
-                type: plain_text
-                text: Select a date
+    - text: "please provide the end date"
   utter_ask_end_date_half_day:
     - text: "half day (yes or no)?"
-      buttons:
-      - title: "yes"
-        payload: 'yes'
-      - title: "no"
-        payload: 'no'
   utter_goodbye:
     - text: "Bye!"
   utter_submit:
@@ -144,24 +108,12 @@ templates:
              - purpose: {purpose}\n
              - endroit: {endroit}"
   utter_submit_leave_authorization:
-    - custom:
-        blocks:
-        - type: section
-          text:
-            type: mrkdwn
-            text: 'your request is under review following the parameters :'
-        - type: section
-          fields:
-          - type: mrkdwn
-            text: "*Departure date:*\n{dep_date}"
-          - type: mrkdwn
-            text: "*Half day:*\n{dep_date_half_day}"
-          - type: mrkdwn
-            text: "*End date:*\n{end_date}"
-          - type: mrkdwn
-            text: "*Half day:*\n{end_date_half_day}"
-          - type: mrkdwn
-            text: "*Type:*\n{certif_type}"
+    - text: "your request is under review following the parameters:\n
+             - certificate: {certif_type}\n
+             - Departure date: {dep_date}\n
+             - Half day: {dep_date_half_day}\n
+             - End date: {end_date}\n
+             - Half day: {end_date_half_day}"
   utter_noworries:
     - text: "you are welcome :)"
   utter_ask_continue:
@@ -192,17 +144,6 @@ templates:
     - text: "I am a bot, powered by xHub."
   utter_ask_certif_type:
     - text: 'which type of certificate ?'
-      buttons:
-      - title: "salary certificate"
-        payload: '/request_certificate{"certif_type":"salary certificate"}'
-      - title: "work certificate"
-        payload: '/request_certificate{"certif_type":"work certificate"}'
-      - title: "mission order"
-        payload: '/request_certificate{"certif_type":"mission order"}'
-      - title: "expense report"
-        payload: '/request_certificate{"certif_type":"expense report"}'
-      - title: "leave authorization"
-        payload: '/request_certificate{"certif_type":"leave authorization"}'
 actions:
   - utter_noworries
   - utter_ask_continue
