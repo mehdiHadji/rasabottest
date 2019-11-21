@@ -24,12 +24,8 @@ entities:
   - dep_date_half_day
   - end_date
   - end_date_half_day
-  - number
 
 slots:
-  time:
-    type: text
-    auto_fill: false
   certif_type:
     type: unfeaturized
     auto_fill: false
