@@ -3,23 +3,9 @@ from rasa_sdk import Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from datetime import datetime
-from slackclient import SlackClient
 import requests
 import json
 from datetime import datetime, date
-
-SLACK_BOT_TOKEN = "xoxb-774540282707-840797492853-4DmqomK3T8F1lsqAFTdrBdnh"
-API_ENDPOINT = "http://localhost:5000/setdata"
-slack_client = SlackClient(SLACK_BOT_TOKEN)
-
-
-def slackitems(tracker):
-    username = tracker.sender_id
-    print("username", username)
-    userinfo = slack_client.api_call("users.info", user=username)
-    email = userinfo['user']['profile']['email']
-    real_name = userinfo['user']['profile']['real_name']
-    return email, real_name
 
 
 def validate_date(date_input,marge):
@@ -46,13 +32,11 @@ def validate_period_date(date_deb, date_end):
         return False
 
 
-
 class CertificateForm(FormAction):
 
     def name(self) -> Text:
         return "certificate_form"
-
-    
+  
     @staticmethod
     def required_slots(tracker: Tracker) -> List[Text]:
         if tracker.get_slot("certif_type") == "expense report":
@@ -257,71 +241,21 @@ class CertificateForm(FormAction):
     def submit(self,dispatcher: CollectingDispatcher,tracker: Tracker,domain: Dict[Text, Any],) -> List[Dict]:
         certificate_type = tracker.get_slot('certif_type')
         if certificate_type == "work certificate" or certificate_type == "salary certificate":
-            email = slackitems(tracker)[0]
-            username = slackitems(tracker)[1]
-            #change them in respect to saad requirements
-            body = {'certif_type':tracker.slots['certif_type'],
-            'slack_username': username,
-            "mail":email,
-            "langue":tracker.slots['langue'],
-            "copies_num":tracker.slots['copies_num']
-            }
-            headers = {'content-type': 'application/json'}
-            post_data = requests.post(API_ENDPOINT, data = json.dumps(body),headers=headers)
+            print('#####################')
+            print('#####################')
+            print('#####################')
+            print('#####################')
             dispatcher.utter_template("utter_submit_work_salary_certificate", tracker, **tracker.slots)
             return []
         
         if certificate_type == "expense report":
-            email = slackitems(tracker)[0]
-            username = slackitems(tracker)[1]
-            #change them in respect to saad requirements
-            body = {'certif_type':tracker.slots['certif_type'],
-            'slack_username': username,
-            "mail":email,
-            "period":tracker.slots['period'],
-            "purpose":tracker.slots['purpose'],
-            "details":tracker.slots['details']
-            }
-            headers = {'content-type': 'application/json'}
-            post_data = requests.post(API_ENDPOINT, data = json.dumps(body),headers=headers)
             dispatcher.utter_template("utter_submit_expense_report", tracker, **tracker.slots)
             return []
         
         if certificate_type == "mission order":
-            email = slackitems(tracker)[0]
-            username = slackitems(tracker)[1]
-            #change them in respect to saad requirements
-            body = {'certif_type':tracker.slots['certif_type'],
-            'slack_username': username,
-            "mail":email,
-            "period":tracker.slots['period'],
-            "purpose":tracker.slots['purpose'],
-            "endroit":tracker.slots['endroit']
-            }
-            headers = {'content-type': 'application/json'}
-            post_data = requests.post(API_ENDPOINT, data = json.dumps(body),headers=headers)
             dispatcher.utter_template("utter_submit_mission_order", tracker, **tracker.slots)
             return []
         
         if certificate_type == "leave authorization":
-
-            email = slackitems(tracker)[0]
-            username = slackitems(tracker)[1]
-            #change them in respect to saad requirements
-            body = {'certif_type':tracker.slots['certif_type'],
-            'slack_username': username,
-            "mail":email,
-            "departure_date":tracker.slots['dep_date'],
-            "dep_date_half_day":tracker.slots['dep_date_half_day'],
-            "end_date":tracker.slots['end_date'],
-            "end_date_half_day":tracker.slots['end_date_half_day']
-            }
-
-            print("##-------------")
-            print(body)
-            print("##-------------")
-
-            headers = {'content-type': 'application/json'}
-            post_data = requests.post(API_ENDPOINT, data = json.dumps(body),headers=headers)
             dispatcher.utter_template("utter_submit_leave_authorization", tracker, **tracker.slots)
             return []
