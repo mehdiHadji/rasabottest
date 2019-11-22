@@ -8,7 +8,7 @@ import requests
 import json
 from datetime import datetime, date
 
-SLACK_BOT_TOKEN = "xoxb-774540282707-840797492853-4DmqomK3T8F1lsqAFTdrBdnh"
+SLACK_BOT_TOKEN = "xoxb-774540282707-832865935426-Fw55tMOhP0riScpvmkIdhXUb"
 API_ENDPOINT = "http://localhost:5000/setdata"
 slack_client = SlackClient(SLACK_BOT_TOKEN)
 
