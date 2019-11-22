@@ -7,6 +7,10 @@ pipeline:
   - name: CountVectorsFeaturizer
     token_pattern: (?u)\b\w+\b
   - name: EmbeddingIntentClassifier
+  - name: DucklingHTTPExtractor
+    url: http://localhost:8000
+    dimensions: ["time", "duration","number"]
+    timezone: "Etc/GMT+1"
 
 policies:
   - name: MemoizationPolicy
