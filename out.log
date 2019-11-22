@@ -24,3 +24,62 @@ sanic.exceptions.MethodNotSupported: Method POST not allowed for URL /
 2019-11-19 18:19:46,080 [INFO ]  Starting Rasa server on http://localhost:5002
 2019-11-19 18:29:39,956 [INFO ]  Starting Rasa server on http://localhost:5002
 2019-11-20 15:29:17,702 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-22 15:41:31,065 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-22 15:44:27,042 [WARNI]  Could not parse timestamp 523678bea5c4458fba247c6d1a330e0a. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '523678bea5c4458fba247c6d1a330e0a'
+2019-11-22 15:44:27,054 [WARNI]  No policy ensemble or domain set. Skipping action prediction and execution.
+2019-11-22 15:44:38,739 [WARNI]  Could not parse timestamp 526c8ce7a72140e4ad7c638205e6b80b. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '526c8ce7a72140e4ad7c638205e6b80b'
+2019-11-22 15:44:38,748 [WARNI]  No policy ensemble or domain set. Skipping action prediction and execution.
+2019-11-22 15:55:26,894 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-22 15:59:26,411 [WARNI]  Could not parse timestamp 748dbdd7e1cd4b8d9bb01af1faeb7d4b. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '748dbdd7e1cd4b8d9bb01af1faeb7d4b'
+2019-11-22 16:07:36,339 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-22 16:08:38,878 [ERROR]  Exception occurred while handling uri: 'http://815460c7.ngrok.io/webhooks/slack/wezbhook'
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /webhooks/slack/wezbhook not found
+2019-11-22 16:09:20,745 [ERROR]  Exception occurred while handling uri: 'http://815460c7.ngrok.io/webhooks/sl'
+Traceback (most recent call last):
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\app.py", line 893, in handle_request
+    handler, args, kwargs, uri = self.router.get(request)
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\router.py", line 407, in get
+    return self._get(request.path, request.method, "")
+  File "c:\users\user\anaconda3\lib\site-packages\sanic\router.py", line 469, in _get
+    raise NotFound("Requested URL {} not found".format(url))
+sanic.exceptions.NotFound: Requested URL /webhooks/sl not found
+2019-11-22 16:10:09,986 [WARNI]  Could not parse timestamp 93a01c59e47245e6b6c48749c9b52320. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '93a01c59e47245e6b6c48749c9b52320'
+2019-11-22 16:10:21,779 [WARNI]  Could not parse timestamp 1c788e99aadb4954abdc26fbc4d1a1e5. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '1c788e99aadb4954abdc26fbc4d1a1e5'
+2019-11-22 16:10:45,751 [WARNI]  Could not parse timestamp fb96ee7e6b2742b39889e082e46c5837. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'fb96ee7e6b2742b39889e082e46c5837'
+2019-11-22 16:10:49,743 [WARNI]  Could not parse timestamp baf05d3d1ab44beba8440f3710806deb. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'baf05d3d1ab44beba8440f3710806deb'
+2019-11-22 16:10:57,096 [WARNI]  Could not parse timestamp 23c83dd5008e412fb87789a151250994. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '23c83dd5008e412fb87789a151250994'
+2019-11-22 16:11:02,983 [WARNI]  Could not parse timestamp 07269a996da34fbea30d97be1d7b275e. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '07269a996da34fbea30d97be1d7b275e'
+2019-11-22 16:11:19,145 [WARNI]  Could not parse timestamp b872cf6249fb4b2daa0197678176c0ea. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'b872cf6249fb4b2daa0197678176c0ea'
+2019-11-22 16:11:26,051 [WARNI]  Could not parse timestamp ca26f224e2a74e88a4a5aca326e42063. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'ca26f224e2a74e88a4a5aca326e42063'
+2019-11-22 16:12:36,801 [WARNI]  Could not parse timestamp 23b7f25aac674b58a87d6026d80116ed. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '23b7f25aac674b58a87d6026d80116ed'
+2019-11-22 16:12:52,287 [WARNI]  Could not parse timestamp e29b4e01d3c0441caa72a75835896cf9. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'e29b4e01d3c0441caa72a75835896cf9'
+2019-11-22 16:13:02,412 [WARNI]  Could not parse timestamp 4394b80935b14f7fa4da4bc429bf571e. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '4394b80935b14f7fa4da4bc429bf571e'
+2019-11-22 16:13:19,744 [WARNI]  Could not parse timestamp fcf41df79871406ba000fcf6b497f638. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'fcf41df79871406ba000fcf6b497f638'
+2019-11-22 16:13:22,837 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-11-22 16:13:29,766 [WARNI]  Could not parse timestamp 0222484d9e9e4fa5b0abfe06272664a8. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '0222484d9e9e4fa5b0abfe06272664a8'
+2019-11-22 16:13:56,234 [WARNI]  Could not parse timestamp 55d45ac250124b9eba88afe3da90acae. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '55d45ac250124b9eba88afe3da90acae'
+2019-11-22 16:26:50,591 [WARNI]  Could not parse timestamp 2cc08be0cb3541faa5baec1b3c89cc5b. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '2cc08be0cb3541faa5baec1b3c89cc5b'
+2019-11-22 16:26:55,879 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-11-22 16:27:06,314 [WARNI]  Could not parse timestamp 01adbb1806d0438bbde235031eed655e. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '01adbb1806d0438bbde235031eed655e'
+2019-11-22 16:27:14,244 [WARNI]  Could not parse timestamp 0367199323364d889447fa7ca4133b24. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '0367199323364d889447fa7ca4133b24'
+2019-11-22 16:27:19,154 [WARNI]  Could not parse timestamp c66e3f369ddb4fa68c192f4e5b2f9dc3. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'c66e3f369ddb4fa68c192f4e5b2f9dc3'
+2019-11-22 16:27:24,993 [WARNI]  Could not parse timestamp 74fd2fffb06f42a7a987ec12a260f63c. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '74fd2fffb06f42a7a987ec12a260f63c'
+2019-11-22 16:27:28,492 [WARNI]  Could not parse timestamp 1bdc89c398f84ec88444d94e240b580a. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '1bdc89c398f84ec88444d94e240b580a'
+2019-11-22 16:27:42,932 [WARNI]  Could not parse timestamp 8d2372379b5742bebb7204c7428524b9. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '8d2372379b5742bebb7204c7428524b9'
+2019-11-22 16:27:47,932 [WARNI]  Could not parse timestamp 91414efea61c401fb1666cdee56a8b1c. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '91414efea61c401fb1666cdee56a8b1c'
+2019-11-22 16:31:27,616 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-22 16:32:22,063 [WARNI]  Could not parse timestamp f73e7c3e1675487a84bba003476532b9. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'f73e7c3e1675487a84bba003476532b9'
+2019-11-22 16:32:29,149 [WARNI]  Could not parse timestamp 3169ddc111034db6b7eda72e8bde4c4f. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '3169ddc111034db6b7eda72e8bde4c4f'
+2019-11-22 16:32:35,467 [WARNI]  Could not parse timestamp f96c94de441548cea984ff74f8ff04e5. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'f96c94de441548cea984ff74f8ff04e5'
+2019-11-22 16:32:38,548 [WARNI]  Could not parse timestamp 1551ecc621564e34b180d5aa00ded2d3. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '1551ecc621564e34b180d5aa00ded2d3'
+2019-11-22 16:32:43,313 [WARNI]  Could not parse timestamp e41e1e10db6443599fa35724f93f29de. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'e41e1e10db6443599fa35724f93f29de'
+2019-11-22 16:32:47,277 [WARNI]  Could not parse timestamp bfd6842fba694861902eebc097ad46fa. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'bfd6842fba694861902eebc097ad46fa'
+2019-11-22 16:33:01,175 [WARNI]  Could not parse timestamp d636ad68f9394ce0acb6cbd743c3fcf4. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'd636ad68f9394ce0acb6cbd743c3fcf4'
+2019-11-22 16:33:10,321 [WARNI]  Could not parse timestamp 259f131c47e64e9d8f7c7e96f01be606. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '259f131c47e64e9d8f7c7e96f01be606'
