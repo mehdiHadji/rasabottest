@@ -12,6 +12,7 @@ intents:
   - bot_challenge
   - goodbye
 
+
 entities:
   - certif_type
   - period
@@ -63,6 +64,12 @@ slots:
     type: unfeaturized
 
 templates:
+  utter_ask_again:
+  - text: "Okay! Let's start again, please tell me what do you need?"
+  - text: "No issues! Let's try this again.\n Please repeat your query?"
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "I hope that solved your query"
   utter_ask_certificate:
   - text: "which type of certificate ?"
   utter_ask_period:
@@ -212,6 +219,8 @@ actions:
   - utter_unclear
   - utter_ask_certif_type
   - utter_ask_dep_date
+  - utter_did_that_help
+  - utter_ask_again
 
 forms:
   - certificate_form

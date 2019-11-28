@@ -536,3 +536,6 @@ sanic.exceptions.NotFound: Requested URL /webhooks/sl not found
 2019-11-27 12:14:16,445 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
 2019-11-27 12:14:16,449 [DEBUG]  Action 'action_listen' ended with events '[]'
 2019-11-27 12:14:16,451 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-11-28 18:13:45,380 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-11-28 18:17:08,466 [WARNI]  Could not parse timestamp ed3d7c5c82094fb981bc3ef733f8bced. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'ed3d7c5c82094fb981bc3ef733f8bced'
+2019-11-28 18:17:42,939 [WARNI]  Could not parse timestamp 6c4227e8b01a48d7b935dbcfcd64def7. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '6c4227e8b01a48d7b935dbcfcd64def7'
