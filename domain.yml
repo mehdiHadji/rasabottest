@@ -213,14 +213,39 @@ templates:
 actions:
   - utter_noworries
   - utter_ask_continue
+  - utter_wrong_certif_type
+  - utter_wrong_period
+  - utter_wrong_langue
+  - utter_wrong_copies_num
+  - utter_wrong_endroit
+  - utter_wrong_dep_date
+  - utter_wrong_dep_date_half_day
+  - utter_wrong_end_date
+  - utter_wrong_end_date_half_day
+  - utter_unclear
   - utter_greet
   - utter_iamabot
   - utter_goodbye
-  - utter_unclear
   - utter_ask_certif_type
   - utter_ask_dep_date
   - utter_did_that_help
   - utter_ask_again
+  - utter_ask_certificate
+  - utter_ask_period
+  - utter_ask_purpose
+  - utter_ask_details
+  - utter_ask_langue
+  - utter_ask_copies_num
+  - utter_ask_endroit
+  - utter_ask_dep_date_half_day
+  - utter_ask_end_date
+  - utter_ask_end_date_half_day
+  - utter_submit
+  - utter_submit_work_salary_certificate
+  - utter_submit_expense_report
+  - utter_submit_mission_order
+  - utter_submit_leave_authorization
+
 
 forms:
   - certificate_form
