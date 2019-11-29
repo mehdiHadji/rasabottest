@@ -5,18 +5,9 @@
     - certificate_form
     - form{"name": "certificate_form"}
     - form{"name": null}
-* thankyou
-    - utter_noworries
-* goodbye
-  - utter_goodbye
-  - action_restart
-
-
-## certif path2
-* request_certificate
-    - certificate_form
-    - form{"name": "certificate_form"}
-    - form{"name": null}
+    - utter_did_that_help
+* affirm
+  - utter_noworries
 * thankyou
     - utter_noworries
 * goodbye
@@ -33,6 +24,9 @@
     - certificate_form
     - form{"name": "certificate_form"}
     - form{"name": null}
+    - utter_did_that_help
+* affirm
+    - utter_noworries
 * thankyou
     - utter_noworries
 * goodbye
