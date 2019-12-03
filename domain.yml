@@ -68,8 +68,34 @@ templates:
   - text: "Okay! Let's start again, please tell me what do you need?"
   - text: "No issues! Let's try this again.\n Please repeat your query?"
   utter_did_that_help:
-  - text: "Did that help you?"
-  - text: "I hope that solved your query"
+    - custom:
+        blocks:
+        - type: section
+          text:
+            type: plain_text
+            text: "Did that help you?"
+            emoji: true
+        - type: divider
+        - type: section
+          text:
+            type: mrkdwn
+            text: 'approve or deny ?'
+        - type: actions
+          elements:
+          - type: button
+            text:
+              type: plain_text
+              emoji: true
+              text: Approve
+            style: primary
+            value: "yes"
+          - type: button
+            text:
+              type: plain_text
+              emoji: true
+              text: Deny
+            style: danger
+            value: "no"
   utter_ask_certificate:
   - text: "which type of certificate ?"
   utter_ask_period:
@@ -153,6 +179,7 @@ templates:
   utter_submit_leave_authorization:
     - custom:
         blocks:
+        - type: divider
         - type: section
           text:
             type: mrkdwn
@@ -168,7 +195,8 @@ templates:
           - type: mrkdwn
             text: "*Half day:*\n{end_date_half_day}"
           - type: mrkdwn
-            text: "*Type:*\n{certif_type}"
+            text: "*Type:* {certif_type}"
+        - type: divider
   utter_noworries:
     - text: "you are welcome :)"
   utter_ask_continue:
