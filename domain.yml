@@ -160,10 +160,22 @@ templates:
   utter_submit:
     - text: "All done!"
   utter_submit_work_salary_certificate:
-    - text: "your request is under review following the parameters:\n
-             - certificate: {certif_type}\n
-             - langue: {langue}\n
-             - copies: {copies_num}\n"
+    - custom:
+        blocks:
+        - type: divider
+        - type: section
+          text:
+            type: mrkdwn
+            text: 'your request is under review following the parameters :'
+        - type: section
+          fields:
+          - type: mrkdwn
+            text: "*Certificate:*\n{certif_type}"
+          - type: mrkdwn
+            text: "*Langue:*\n{langue}"
+          - type: mrkdwn
+            text: "*Copies:*\n{copies_num}"
+        - type: divider
   utter_submit_expense_report:
     - text: "your request is under review following the parameters:\n
              - certificate: {certif_type}\n
