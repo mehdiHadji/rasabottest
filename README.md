@@ -19,3 +19,6 @@ The purpose of this project is to showcase a contextual AI assistant built with 
 
 #### Salary certificate
 ![](demo/salary.gif)
+
+### Expense report
+![](demo/expense.gif)
