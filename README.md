@@ -22,3 +22,6 @@ The purpose of this project is to showcase a contextual AI assistant built with 
 
 ### Expense report
 ![](demo/expense.gif)
+
+### Mission order
+![](demo/misssion.gif)
