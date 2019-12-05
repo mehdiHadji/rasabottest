@@ -14426,3 +14426,304 @@ Exception: Failed to execute custom action.
 2019-12-05 15:57:30,631 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
 2019-12-05 15:57:30,632 [DEBUG]  Action 'action_listen' ended with events '[]'
 2019-12-05 15:57:30,634 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:02:49,277 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id>/messages          POST                           add_message
+/conversations/<conversation_id>/tracker/events    POST                           append_events
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id>/execute           POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id>/predict           POST                           predict
+/conversations/<conversation_id>/tracker/events    PUT                            replace_events
+/conversations/<conversation_id>/story             GET                            retrieve_story
+/conversations/<conversation_id>/tracker           GET                            retrieve_tracker
+/webhooks/slack                                    GET                            slack_webhook.health
+/webhooks/slack/webhook                            GET                            slack_webhook.webhook
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2019-12-05 16:02:49,279 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-12-05 16:02:49,281 [INFO ]  Enabling coroutine debugging. Loop id 3019660219528.
+2019-12-05 16:02:49,328 [DEBUG]  Extracted model to 'C:\Users\user\AppData\Local\Temp\tmpcqsuf3mc'.
+2019-12-05 16:02:49,995 [DEBUG]  Connected to InMemoryTrackerStore.
+2019-12-05 16:02:49,996 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2019-12-05 16:02:50,043 [DEBUG]  Extracted model to 'C:\Users\user\AppData\Local\Temp\tmpyx0vc1he'.
+2019-12-05 16:02:50,049 [DEBUG]  Using yaml library: c:\users\user\anaconda3\lib\site-packages\ruamel\yaml\__init__.py
+2019-12-05 16:05:37,896 [DEBUG]  Creating a new tracker for id 'UNSFW8BCK'.
+2019-12-05 16:05:37,956 [WARNI]  Could not parse timestamp bc18fc0513a043699484f457b5166820. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'bc18fc0513a043699484f457b5166820'
+2019-12-05 16:05:39,966 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BF16A01148>: Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée'))
+2019-12-05 16:05:39,968 [DEBUG]  Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.9478049874305725}' and entities '[]'
+2019-12-05 16:05:39,969 [DEBUG]  Logged UserUtterance - tracker now has 2 events
+2019-12-05 16:05:39,971 [DEBUG]  Current tracker state [None, None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:05:39,972 [DEBUG]  There is a memorised next action '12'
+2019-12-05 16:05:39,973 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:05:40,138 [DEBUG]  There is no active form
+2019-12-05 16:05:40,140 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 16:05:40,141 [DEBUG]  Predicted next action 'utter_greet' with confidence 1.00.
+2019-12-05 16:05:40,142 [DEBUG]  Action 'utter_greet' ended with events '['BotUttered(text: Hello! I am certificate search assistant! How can I help?, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {})']'
+2019-12-05 16:05:40,531 [DEBUG]  Current tracker state [None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}]
+2019-12-05 16:05:40,533 [DEBUG]  There is a memorised next action '0'
+2019-12-05 16:05:40,535 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:05:40,542 [DEBUG]  There is no active form
+2019-12-05 16:05:40,544 [DEBUG]  There is no mapped action for the predicted intent, 'greet'.
+2019-12-05 16:05:40,546 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 16:05:40,548 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 16:05:40,549 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 16:05:40,551 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:05:40,940 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-12-05 16:05:52,001 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 16:05:52,004 [WARNI]  Could not parse timestamp 26ba35579b054fa7873650b407327ba8. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '26ba35579b054fa7873650b407327ba8'
+2019-12-05 16:05:54,009 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BF16A583C8>: Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée'))
+2019-12-05 16:05:54,012 [DEBUG]  Received user message 'i need a leave authorization' with intent '{'name': 'request_certificate', 'confidence': 0.9761604070663452}' and entities '[{'start': 9, 'end': 28, 'value': 'leave authorization', 'entity': 'certif_type', 'confidence': 0.9823084505240598, 'extractor': 'CRFEntityExtractor'}]'
+2019-12-05 16:05:54,014 [DEBUG]  Current slot values: 
+	certif_type: None
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: None
+2019-12-05 16:05:54,016 [DEBUG]  Logged UserUtterance - tracker now has 6 events
+2019-12-05 16:05:54,018 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:05:54,020 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:05:54,021 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:05:54,026 [DEBUG]  There is no active form
+2019-12-05 16:05:54,028 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 16:05:54,030 [DEBUG]  Predicted next action 'certificate_form' with confidence 1.00.
+2019-12-05 16:05:54,031 [DEBUG]  Calling action endpoint to run action 'certificate_form'.
+2019-12-05 16:05:55,034 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-12-05 16:05:55,081 [DEBUG]  Action 'certificate_form' ended with events '['BotUttered(text: please provide the departure date, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {"certif_type": "leave authorization", "copies_num": null, "dep_date": null, "dep_date_half_day": null, "details": null, "end_date": null, "end_date_half_day": null, "endroit": null, "langue": null, "period": null, "purpose": null, "requested_slot": null})', 'Form(certificate_form)', 'SlotSet(key: certif_type, value: leave authorization)', 'SlotSet(key: requested_slot, value: dep_date)']'
+2019-12-05 16:05:55,082 [DEBUG]  Current slot values: 
+	certif_type: leave authorization
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: dep_date
+2019-12-05 16:05:55,477 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:05:55,479 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:05:55,481 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:05:55,489 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 16:05:55,495 [DEBUG]  There is no mapped action for the predicted intent, 'request_certificate'.
+2019-12-05 16:05:55,497 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 16:05:55,499 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 16:05:55,501 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 16:05:55,503 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:06:03,807 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 16:06:03,809 [WARNI]  Could not parse timestamp 838670ceace64a65945735e48fde6a25. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '838670ceace64a65945735e48fde6a25'
+2019-12-05 16:06:05,816 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BF16CCBA48>: Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée'))
+2019-12-05 16:06:05,818 [DEBUG]  Received user message '2019-12-12' with intent '{'name': 'inform', 'confidence': 0.9917387366294861}' and entities '[]'
+2019-12-05 16:06:05,820 [DEBUG]  Logged UserUtterance - tracker now has 13 events
+2019-12-05 16:06:05,822 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:06:05,824 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:06:05,825 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:05,831 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 16:06:05,833 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 16:06:05,835 [DEBUG]  Predicted next action 'certificate_form' with confidence 1.00.
+2019-12-05 16:06:05,837 [DEBUG]  Calling action endpoint to run action 'certificate_form'.
+2019-12-05 16:06:06,825 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-12-05 16:06:06,874 [DEBUG]  Action 'certificate_form' ended with events '['BotUttered(text: half day (yes or no)?, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {"certif_type": "leave authorization", "copies_num": null, "dep_date": "2019-12-12", "dep_date_half_day": null, "details": null, "end_date": null, "end_date_half_day": null, "endroit": null, "langue": null, "period": null, "purpose": null, "requested_slot": "dep_date"})', 'SlotSet(key: dep_date, value: 2019-12-12)', 'SlotSet(key: requested_slot, value: dep_date_half_day)']'
+2019-12-05 16:06:06,876 [DEBUG]  Current slot values: 
+	certif_type: leave authorization
+	copies_num: None
+	dep_date: 2019-12-12
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: dep_date_half_day
+2019-12-05 16:06:07,271 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:06:07,273 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:06:07,274 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:07,280 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 16:06:07,282 [DEBUG]  There is no mapped action for the predicted intent, 'inform'.
+2019-12-05 16:06:07,283 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 16:06:07,284 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 16:06:07,285 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 16:06:07,286 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:06:10,604 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 16:06:10,614 [WARNI]  Could not parse timestamp ad80c82e208b4195b91d949da39f914c. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'ad80c82e208b4195b91d949da39f914c'
+2019-12-05 16:06:12,630 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BF16CE5508>: Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée'))
+2019-12-05 16:06:12,634 [DEBUG]  Received user message 'yes' with intent '{'name': 'affirm', 'confidence': 0.8883468508720398}' and entities '[]'
+2019-12-05 16:06:12,637 [DEBUG]  Logged UserUtterance - tracker now has 19 events
+2019-12-05 16:06:12,641 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:06:12,643 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:06:12,645 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:12,655 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 16:06:12,657 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 16:06:12,660 [DEBUG]  Predicted next action 'certificate_form' with confidence 1.00.
+2019-12-05 16:06:12,662 [DEBUG]  Calling action endpoint to run action 'certificate_form'.
+2019-12-05 16:06:13,616 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-12-05 16:06:13,695 [DEBUG]  Action 'certificate_form' ended with events '['BotUttered(text: please provide the end date, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {"certif_type": "leave authorization", "copies_num": null, "dep_date": "2019-12-12", "dep_date_half_day": "yes", "details": null, "end_date": null, "end_date_half_day": null, "endroit": null, "langue": null, "period": null, "purpose": null, "requested_slot": "dep_date_half_day"})', 'SlotSet(key: dep_date_half_day, value: yes)', 'SlotSet(key: requested_slot, value: end_date)']'
+2019-12-05 16:06:13,697 [DEBUG]  Current slot values: 
+	certif_type: leave authorization
+	copies_num: None
+	dep_date: 2019-12-12
+	dep_date_half_day: yes
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: end_date
+2019-12-05 16:06:14,103 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:06:14,105 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:06:14,106 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:14,112 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 16:06:14,114 [DEBUG]  There is no mapped action for the predicted intent, 'affirm'.
+2019-12-05 16:06:14,115 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 16:06:14,116 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 16:06:14,117 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 16:06:14,119 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:06:21,833 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 16:06:21,837 [WARNI]  Could not parse timestamp 27ae490a258643558e9fa5068451d059. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '27ae490a258643558e9fa5068451d059'
+2019-12-05 16:06:23,854 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BF16CE0E88>: Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée'))
+2019-12-05 16:06:23,859 [DEBUG]  Received user message '2019-12-14' with intent '{'name': 'inform', 'confidence': 0.9917387366294861}' and entities '[]'
+2019-12-05 16:06:23,860 [DEBUG]  Logged UserUtterance - tracker now has 25 events
+2019-12-05 16:06:23,863 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:06:23,865 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:06:23,866 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:23,871 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 16:06:23,872 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 16:06:23,873 [DEBUG]  Predicted next action 'certificate_form' with confidence 1.00.
+2019-12-05 16:06:23,875 [DEBUG]  Calling action endpoint to run action 'certificate_form'.
+2019-12-05 16:06:24,851 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-12-05 16:06:24,898 [DEBUG]  Action 'certificate_form' ended with events '['BotUttered(text: half day (yes or no)?, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {"certif_type": "leave authorization", "copies_num": null, "dep_date": "2019-12-12", "dep_date_half_day": "yes", "details": null, "end_date": "2019-12-14", "end_date_half_day": null, "endroit": null, "langue": null, "period": null, "purpose": null, "requested_slot": "end_date"})', 'SlotSet(key: end_date, value: 2019-12-14)', 'SlotSet(key: requested_slot, value: end_date_half_day)']'
+2019-12-05 16:06:24,900 [DEBUG]  Current slot values: 
+	certif_type: leave authorization
+	copies_num: None
+	dep_date: 2019-12-12
+	dep_date_half_day: yes
+	details: None
+	end_date: 2019-12-14
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: end_date_half_day
+2019-12-05 16:06:25,309 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:06:25,310 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:06:25,312 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:25,319 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 16:06:25,320 [DEBUG]  There is no mapped action for the predicted intent, 'inform'.
+2019-12-05 16:06:25,321 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 16:06:25,322 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 16:06:25,323 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 16:06:25,324 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:06:28,103 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 16:06:28,106 [WARNI]  Could not parse timestamp 177aad09734b48658732929ed8e011f6. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '177aad09734b48658732929ed8e011f6'
+2019-12-05 16:06:30,124 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BF16CEF548>: Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée'))
+2019-12-05 16:06:30,126 [DEBUG]  Received user message 'no' with intent '{'name': 'deny', 'confidence': 0.9331046342849731}' and entities '[]'
+2019-12-05 16:06:30,128 [DEBUG]  Logged UserUtterance - tracker now has 31 events
+2019-12-05 16:06:30,130 [DEBUG]  Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:06:30,131 [DEBUG]  There is a memorised next action '16'
+2019-12-05 16:06:30,133 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:30,138 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 16:06:30,139 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 16:06:30,140 [DEBUG]  Predicted next action 'certificate_form' with confidence 1.00.
+2019-12-05 16:06:30,142 [DEBUG]  Calling action endpoint to run action 'certificate_form'.
+2019-12-05 16:06:31,164 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-12-05 16:06:32,914 [DEBUG]  Action 'certificate_form' ended with events '['BotUttered(text: your request is under review following the parameters:\n - certificate: leave authorization\n - Departure date: 2019-12-12\n - Half day: yes\n - End date: 2019-12-14\n - Half day: no, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {"certif_type": "leave authorization", "copies_num": null, "dep_date": "2019-12-12", "dep_date_half_day": "yes", "details": null, "end_date": "2019-12-14", "end_date_half_day": "no", "endroit": null, "langue": null, "period": null, "purpose": null, "requested_slot": "end_date_half_day"})', 'SlotSet(key: end_date_half_day, value: no)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+2019-12-05 16:06:32,915 [DEBUG]  Current slot values: 
+	certif_type: leave authorization
+	copies_num: None
+	dep_date: 2019-12-12
+	dep_date_half_day: yes
+	details: None
+	end_date: 2019-12-14
+	end_date_half_day: no
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: None
+2019-12-05 16:06:33,310 [DEBUG]  Current tracker state [{}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}, {'intent_request_certificate': 1.0, 'prev_certificate_form': 1.0}]
+2019-12-05 16:06:33,312 [DEBUG]  There is a memorised next action '0'
+2019-12-05 16:06:33,313 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:33,320 [DEBUG]  There is no active form
+2019-12-05 16:06:33,322 [DEBUG]  There is no mapped action for the predicted intent, 'deny'.
+2019-12-05 16:06:33,323 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 16:06:33,324 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 16:06:33,325 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 16:06:33,327 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:06:38,434 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 16:06:38,438 [WARNI]  Could not parse timestamp 51472dbcbbba4743a56c4ee2cb4fec0d. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '51472dbcbbba4743a56c4ee2cb4fec0d'
+2019-12-05 16:06:40,445 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BF16CFCD48>: Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée'))
+2019-12-05 16:06:40,447 [DEBUG]  Received user message 'thanks' with intent '{'name': 'thankyou', 'confidence': 0.9123913049697876}' and entities '[]'
+2019-12-05 16:06:40,448 [DEBUG]  Logged UserUtterance - tracker now has 38 events
+2019-12-05 16:06:40,453 [DEBUG]  Current tracker state [{'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}, {'intent_request_certificate': 1.0, 'prev_certificate_form': 1.0}, {'prev_action_listen': 1.0, 'intent_thankyou': 1.0}]
+2019-12-05 16:06:40,454 [DEBUG]  There is a memorised next action '14'
+2019-12-05 16:06:40,455 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:40,462 [DEBUG]  There is no active form
+2019-12-05 16:06:40,463 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 16:06:40,464 [DEBUG]  Predicted next action 'utter_noworries' with confidence 1.00.
+2019-12-05 16:06:40,465 [DEBUG]  Action 'utter_noworries' ended with events '['BotUttered(text: you are welcome :), data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {})']'
+2019-12-05 16:06:40,858 [DEBUG]  Current tracker state [{'intent_greet': 1.0, 'prev_utter_greet': 1.0}, {'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}, {'intent_request_certificate': 1.0, 'prev_certificate_form': 1.0}, {'prev_action_listen': 1.0, 'intent_thankyou': 1.0}, {'prev_utter_noworries': 1.0, 'intent_thankyou': 1.0}]
+2019-12-05 16:06:40,861 [DEBUG]  There is a memorised next action '0'
+2019-12-05 16:06:40,862 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:40,870 [DEBUG]  There is no active form
+2019-12-05 16:06:40,871 [DEBUG]  There is no mapped action for the predicted intent, 'thankyou'.
+2019-12-05 16:06:40,872 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 16:06:40,874 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 16:06:40,875 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 16:06:40,876 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:06:44,514 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 16:06:44,517 [WARNI]  Could not parse timestamp d29259abf94e42fe8a6b1b351f0ab07e. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'd29259abf94e42fe8a6b1b351f0ab07e'
+2019-12-05 16:06:46,525 [ERROR]  Failed to connect to duckling http server. Make sure the duckling server is running and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002BF16CE85C8>: Failed to establish a new connection: [WinError 10061] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée'))
+2019-12-05 16:06:46,528 [DEBUG]  Received user message 'goodbye' with intent '{'name': 'goodbye', 'confidence': 0.9167179465293884}' and entities '[]'
+2019-12-05 16:06:46,529 [DEBUG]  Logged UserUtterance - tracker now has 42 events
+2019-12-05 16:06:46,531 [DEBUG]  Current tracker state [{'intent_request_certificate': 1.0, 'prev_action_listen': 1.0}, {'intent_request_certificate': 1.0, 'prev_certificate_form': 1.0}, {'prev_action_listen': 1.0, 'intent_thankyou': 1.0}, {'prev_utter_noworries': 1.0, 'intent_thankyou': 1.0}, {'intent_goodbye': 1.0, 'prev_action_listen': 1.0}]
+2019-12-05 16:06:46,533 [DEBUG]  There is a memorised next action '11'
+2019-12-05 16:06:46,534 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:46,539 [DEBUG]  There is no active form
+2019-12-05 16:06:46,541 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 16:06:46,542 [DEBUG]  Predicted next action 'utter_goodbye' with confidence 1.00.
+2019-12-05 16:06:46,543 [DEBUG]  Action 'utter_goodbye' ended with events '['BotUttered(text: Bye!, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {})']'
+2019-12-05 16:06:48,041 [DEBUG]  Current tracker state [{'intent_request_certificate': 1.0, 'prev_certificate_form': 1.0}, {'prev_action_listen': 1.0, 'intent_thankyou': 1.0}, {'prev_utter_noworries': 1.0, 'intent_thankyou': 1.0}, {'intent_goodbye': 1.0, 'prev_action_listen': 1.0}, {'intent_goodbye': 1.0, 'prev_utter_goodbye': 1.0}]
+2019-12-05 16:06:48,044 [DEBUG]  There is a memorised next action '1'
+2019-12-05 16:06:48,046 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 16:06:48,055 [DEBUG]  There is no active form
+2019-12-05 16:06:48,056 [DEBUG]  There is no mapped action for the predicted intent, 'goodbye'.
+2019-12-05 16:06:48,058 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 16:06:48,059 [DEBUG]  Predicted next action 'action_restart' with confidence 1.00.
+2019-12-05 16:06:48,060 [DEBUG]  Action 'action_restart' ended with events '['Restarted()']'
+2019-12-05 16:06:48,062 [DEBUG]  Current slot values: 
+	certif_type: None
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: None
+2019-12-05 16:06:48,063 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 16:06:48,065 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 16:06:48,066 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 16:06:48,075 [WARNI]  Received retry #1 request from slack due to http_timeout
