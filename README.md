@@ -25,3 +25,6 @@ The purpose of this project is to showcase a contextual AI assistant built with 
 
 ### Mission order
 ![](demo/mission.gif)
+
+### Leave authorization
+![](demo/leave.gif)
