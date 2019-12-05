@@ -1,1 +1,1 @@
-![](work certificate.gif)
+![](work.gif)
