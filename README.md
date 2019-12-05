@@ -12,3 +12,7 @@ The purpose of this project is to showcase a contextual AI assistant built with 
 `data/nlu` - contains NLU training data<br/>
 `domain.yml` - the domain file, including bot response templates<br/>
 `config.yml` - training configurations for the NLU pipeline and policy ensemble<br/>
+
+# Demo
+#### Work certificate
+![](demo/work.gif)
