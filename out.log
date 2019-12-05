@@ -13279,3 +13279,268 @@ Exception: Failed to execute custom action.
 2019-12-05 11:18:50,432 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
 2019-12-05 11:18:50,433 [DEBUG]  Action 'action_listen' ended with events '[]'
 2019-12-05 11:18:50,435 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 12:02:05,056 [DEBUG]  Available web server routes: 
+/conversations/<conversation_id>/messages          POST                           add_message
+/conversations/<conversation_id>/tracker/events    POST                           append_events
+/model/test/intents                                POST                           evaluate_intents
+/model/test/stories                                POST                           evaluate_stories
+/conversations/<conversation_id>/execute           POST                           execute_action
+/domain                                            GET                            get_domain
+/                                                  GET                            hello
+/model                                             PUT                            load_model
+/model/parse                                       POST                           parse
+/conversations/<conversation_id>/predict           POST                           predict
+/conversations/<conversation_id>/tracker/events    PUT                            replace_events
+/conversations/<conversation_id>/story             GET                            retrieve_story
+/conversations/<conversation_id>/tracker           GET                            retrieve_tracker
+/webhooks/slack                                    GET                            slack_webhook.health
+/webhooks/slack/webhook                            GET                            slack_webhook.webhook
+/status                                            GET                            status
+/model/predict                                     POST                           tracker_predict
+/model/train                                       POST                           train
+/model                                             DELETE                         unload_model
+/version                                           GET                            version
+2019-12-05 12:02:05,059 [INFO ]  Starting Rasa server on http://localhost:5002
+2019-12-05 12:02:05,061 [INFO ]  Enabling coroutine debugging. Loop id 1387217896520.
+2019-12-05 12:02:05,106 [DEBUG]  Extracted model to 'C:\Users\user\AppData\Local\Temp\tmpnoh0um5w'.
+2019-12-05 12:02:05,777 [DEBUG]  Connected to InMemoryTrackerStore.
+2019-12-05 12:02:05,778 [DEBUG]  Connected to lock store 'InMemoryLockStore'.
+2019-12-05 12:02:05,822 [DEBUG]  Extracted model to 'C:\Users\user\AppData\Local\Temp\tmpmfrhv_ic'.
+2019-12-05 12:02:05,828 [DEBUG]  Using yaml library: c:\users\user\anaconda3\lib\site-packages\ruamel\yaml\__init__.py
+2019-12-05 12:07:04,115 [DEBUG]  Creating a new tracker for id 'UNSFW8BCK'.
+2019-12-05 12:07:04,201 [WARNI]  Could not parse timestamp fca078f01caf46eab26877a827021b1f. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'fca078f01caf46eab26877a827021b1f'
+2019-12-05 12:07:04,211 [DEBUG]  Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.9478049874305725}' and entities '[]'
+2019-12-05 12:07:04,212 [DEBUG]  Logged UserUtterance - tracker now has 2 events
+2019-12-05 12:07:04,214 [DEBUG]  Current tracker state [None, None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}]
+2019-12-05 12:07:04,215 [DEBUG]  There is a memorised next action '12'
+2019-12-05 12:07:04,216 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:04,381 [DEBUG]  There is no active form
+2019-12-05 12:07:04,382 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:04,383 [DEBUG]  Predicted next action 'utter_greet' with confidence 1.00.
+2019-12-05 12:07:04,384 [DEBUG]  Action 'utter_greet' ended with events '['BotUttered(text: Hello! I am certificate search assistant! How can I help?, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {})']'
+2019-12-05 12:07:04,813 [DEBUG]  Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+2019-12-05 12:07:04,814 [DEBUG]  There is a memorised next action '0'
+2019-12-05 12:07:04,816 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:04,821 [DEBUG]  There is no active form
+2019-12-05 12:07:04,822 [DEBUG]  There is no mapped action for the predicted intent, 'greet'.
+2019-12-05 12:07:04,823 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:04,825 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 12:07:04,826 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 12:07:04,827 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 12:07:11,829 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 12:07:11,834 [WARNI]  Could not parse timestamp 92c0e90a23b9430b850c2a94cf6f2484. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '92c0e90a23b9430b850c2a94cf6f2484'
+2019-12-05 12:07:11,848 [DEBUG]  Received user message 'i need a certificate' with intent '{'name': 'request_unknown_certificate', 'confidence': 0.9081156849861145}' and entities '[]'
+2019-12-05 12:07:11,851 [DEBUG]  Logged UserUtterance - tracker now has 6 events
+2019-12-05 12:07:11,853 [DEBUG]  Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}]
+2019-12-05 12:07:11,855 [DEBUG]  There is a memorised next action '8'
+2019-12-05 12:07:11,856 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:11,860 [DEBUG]  There is no active form
+2019-12-05 12:07:11,862 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:11,863 [DEBUG]  Predicted next action 'utter_ask_certif_type' with confidence 1.00.
+2019-12-05 12:07:11,864 [DEBUG]  Action 'utter_ask_certif_type' ended with events '['BotUttered(text: which type of certificate ?, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {})']'
+2019-12-05 12:07:12,485 [DEBUG]  Current tracker state [{}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}, {'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}]
+2019-12-05 12:07:12,488 [DEBUG]  There is a memorised next action '0'
+2019-12-05 12:07:12,489 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:12,494 [DEBUG]  There is no active form
+2019-12-05 12:07:12,496 [DEBUG]  There is no mapped action for the predicted intent, 'request_unknown_certificate'.
+2019-12-05 12:07:12,497 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:12,498 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 12:07:12,499 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 12:07:12,500 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 12:07:19,778 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 12:07:19,784 [WARNI]  Could not parse timestamp 243676523764403fb3ed6c7219247c60. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '243676523764403fb3ed6c7219247c60'
+2019-12-05 12:07:19,801 [DEBUG]  Received user message 'salary certificate' with intent '{'name': 'request_certificate', 'confidence': 0.7967166900634766}' and entities '[{'start': 0, 'end': 18, 'value': 'salary certificate', 'entity': 'certif_type', 'confidence': 0.8058150637797246, 'extractor': 'CRFEntityExtractor'}]'
+2019-12-05 12:07:19,803 [DEBUG]  Current slot values: 
+	certif_type: None
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: None
+2019-12-05 12:07:19,805 [DEBUG]  Logged UserUtterance - tracker now has 10 events
+2019-12-05 12:07:19,807 [DEBUG]  Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}, {'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}, {'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}]
+2019-12-05 12:07:19,809 [DEBUG]  There is a memorised next action '16'
+2019-12-05 12:07:19,810 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:19,815 [DEBUG]  There is no active form
+2019-12-05 12:07:19,816 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:19,817 [DEBUG]  Predicted next action 'certificate_form' with confidence 1.00.
+2019-12-05 12:07:19,818 [DEBUG]  Calling action endpoint to run action 'certificate_form'.
+2019-12-05 12:07:20,909 [DEBUG]  Action 'certificate_form' ended with events '['BotUttered(text: in which language you want it (FR or EN)?, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {"certif_type": "salary certificate", "copies_num": null, "dep_date": null, "dep_date_half_day": null, "details": null, "end_date": null, "end_date_half_day": null, "endroit": null, "langue": null, "period": null, "purpose": null, "requested_slot": null})', 'Form(certificate_form)', 'SlotSet(key: certif_type, value: salary certificate)', 'SlotSet(key: requested_slot, value: langue)']'
+2019-12-05 12:07:20,911 [DEBUG]  Current slot values: 
+	certif_type: salary certificate
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: langue
+2019-12-05 12:07:21,358 [DEBUG]  Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}, {'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}, {'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}]
+2019-12-05 12:07:21,364 [DEBUG]  There is a memorised next action '16'
+2019-12-05 12:07:21,366 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:21,377 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 12:07:21,379 [DEBUG]  There is no mapped action for the predicted intent, 'request_certificate'.
+2019-12-05 12:07:21,382 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 12:07:21,384 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 12:07:21,386 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 12:07:21,388 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 12:07:25,382 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 12:07:25,385 [WARNI]  Could not parse timestamp b3a0f6f3fa9048289e26f56dea63f54d. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'b3a0f6f3fa9048289e26f56dea63f54d'
+2019-12-05 12:07:25,393 [DEBUG]  Received user message 'fr' with intent '{'name': 'inform', 'confidence': 0.9480328559875488}' and entities '[{'start': 0, 'end': 2, 'value': 'fr', 'entity': 'langue', 'confidence': 0.8349124752947226, 'extractor': 'CRFEntityExtractor'}]'
+2019-12-05 12:07:25,395 [DEBUG]  Current slot values: 
+	certif_type: salary certificate
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: langue
+2019-12-05 12:07:25,396 [DEBUG]  Logged UserUtterance - tracker now has 17 events
+2019-12-05 12:07:25,399 [DEBUG]  Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}, {'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}, {'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}]
+2019-12-05 12:07:25,400 [DEBUG]  There is a memorised next action '16'
+2019-12-05 12:07:25,401 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:25,405 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 12:07:25,406 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 12:07:25,407 [DEBUG]  Predicted next action 'certificate_form' with confidence 1.00.
+2019-12-05 12:07:25,408 [DEBUG]  Calling action endpoint to run action 'certificate_form'.
+2019-12-05 12:07:26,448 [DEBUG]  Action 'certificate_form' ended with events '['BotUttered(text: how many copy you want? , data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {"certif_type": "salary certificate", "copies_num": null, "dep_date": null, "dep_date_half_day": null, "details": null, "end_date": null, "end_date_half_day": null, "endroit": null, "langue": "fr", "period": null, "purpose": null, "requested_slot": "langue"})', 'SlotSet(key: langue, value: fr)', 'SlotSet(key: requested_slot, value: copies_num)']'
+2019-12-05 12:07:26,450 [DEBUG]  Current slot values: 
+	certif_type: salary certificate
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: fr
+	period: None
+	purpose: None
+	requested_slot: copies_num
+2019-12-05 12:07:26,852 [DEBUG]  Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}, {'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}, {'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}]
+2019-12-05 12:07:26,854 [DEBUG]  There is a memorised next action '16'
+2019-12-05 12:07:26,855 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:26,861 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 12:07:26,862 [DEBUG]  There is no mapped action for the predicted intent, 'inform'.
+2019-12-05 12:07:26,863 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 12:07:26,864 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 12:07:26,865 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 12:07:26,866 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 12:07:29,345 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 12:07:29,350 [WARNI]  Could not parse timestamp 516de053b7314856af821fceaa0e17c2. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: '516de053b7314856af821fceaa0e17c2'
+2019-12-05 12:07:29,367 [DEBUG]  Received user message '2' with intent '{'name': 'inform', 'confidence': 0.7340673804283142}' and entities '[{'start': 0, 'end': 1, 'text': '2', 'value': 2, 'confidence': 1.0, 'additional_info': {'value': 2, 'type': 'value'}, 'entity': 'number', 'extractor': 'DucklingHTTPExtractor'}]'
+2019-12-05 12:07:29,371 [DEBUG]  Current slot values: 
+	certif_type: salary certificate
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: fr
+	period: None
+	purpose: None
+	requested_slot: copies_num
+2019-12-05 12:07:29,373 [DEBUG]  Logged UserUtterance - tracker now has 23 events
+2019-12-05 12:07:29,377 [DEBUG]  Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}, {'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}, {'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}]
+2019-12-05 12:07:29,379 [DEBUG]  There is a memorised next action '16'
+2019-12-05 12:07:29,380 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:29,388 [DEBUG]  There is an active form 'certificate_form'
+2019-12-05 12:07:29,390 [DEBUG]  Predicted next action using policy_3_FormPolicy
+2019-12-05 12:07:29,391 [DEBUG]  Predicted next action 'certificate_form' with confidence 1.00.
+2019-12-05 12:07:29,392 [DEBUG]  Calling action endpoint to run action 'certificate_form'.
+2019-12-05 12:07:32,208 [DEBUG]  Action 'certificate_form' ended with events '['BotUttered(text: your request is under review following the parameters:\n - certificate: salary certificate\n - langue: fr\n - copies: 2\n, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {"certif_type": "salary certificate", "copies_num": 2, "dep_date": null, "dep_date_half_day": null, "details": null, "end_date": null, "end_date_half_day": null, "endroit": null, "langue": "fr", "period": null, "purpose": null, "requested_slot": "copies_num"})', 'SlotSet(key: copies_num, value: 2)', 'Form(None)', 'SlotSet(key: requested_slot, value: None)']'
+2019-12-05 12:07:32,211 [DEBUG]  Current slot values: 
+	certif_type: salary certificate
+	copies_num: 2
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: fr
+	period: None
+	purpose: None
+	requested_slot: None
+2019-12-05 12:07:32,651 [DEBUG]  Current tracker state [{'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}, {'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}, {'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}, {'prev_certificate_form': 1.0, 'intent_request_certificate': 1.0}]
+2019-12-05 12:07:32,653 [DEBUG]  There is a memorised next action '0'
+2019-12-05 12:07:32,655 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:32,662 [DEBUG]  There is no active form
+2019-12-05 12:07:32,664 [DEBUG]  There is no mapped action for the predicted intent, 'inform'.
+2019-12-05 12:07:32,666 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:32,667 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 12:07:32,669 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 12:07:32,671 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 12:07:32,679 [WARNI]  Received retry #1 request from slack due to http_timeout
+2019-12-05 12:07:37,564 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 12:07:37,567 [WARNI]  Could not parse timestamp b59654e020ce46c8bdd290757802c02d. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'b59654e020ce46c8bdd290757802c02d'
+2019-12-05 12:07:37,575 [DEBUG]  Received user message 'thanks' with intent '{'name': 'thankyou', 'confidence': 0.9123913049697876}' and entities '[]'
+2019-12-05 12:07:37,576 [DEBUG]  Logged UserUtterance - tracker now has 30 events
+2019-12-05 12:07:37,580 [DEBUG]  Current tracker state [{'prev_action_listen': 1.0, 'intent_request_unknown_certificate': 1.0}, {'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}, {'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}, {'prev_certificate_form': 1.0, 'intent_request_certificate': 1.0}, {'prev_action_listen': 1.0, 'intent_thankyou': 1.0}]
+2019-12-05 12:07:37,581 [DEBUG]  There is a memorised next action '14'
+2019-12-05 12:07:37,583 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:37,588 [DEBUG]  There is no active form
+2019-12-05 12:07:37,590 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:37,591 [DEBUG]  Predicted next action 'utter_noworries' with confidence 1.00.
+2019-12-05 12:07:37,592 [DEBUG]  Action 'utter_noworries' ended with events '['BotUttered(text: you are welcome :), data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {})']'
+2019-12-05 12:07:37,995 [DEBUG]  Current tracker state [{'intent_request_unknown_certificate': 1.0, 'prev_utter_ask_certif_type': 1.0}, {'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}, {'prev_certificate_form': 1.0, 'intent_request_certificate': 1.0}, {'prev_action_listen': 1.0, 'intent_thankyou': 1.0}, {'prev_utter_noworries': 1.0, 'intent_thankyou': 1.0}]
+2019-12-05 12:07:37,997 [DEBUG]  There is a memorised next action '0'
+2019-12-05 12:07:37,998 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:38,005 [DEBUG]  There is no active form
+2019-12-05 12:07:38,006 [DEBUG]  There is no mapped action for the predicted intent, 'thankyou'.
+2019-12-05 12:07:38,007 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:38,008 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 12:07:38,009 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 12:07:38,011 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
+2019-12-05 12:07:43,363 [DEBUG]  Recreating tracker for id 'UNSFW8BCK'
+2019-12-05 12:07:43,368 [WARNI]  Could not parse timestamp a671e4945ad6432ebcdac6c4d8e204ea. Instead current UTC time will be passed to duckling. Error: invalid literal for int() with base 10: 'a671e4945ad6432ebcdac6c4d8e204ea'
+2019-12-05 12:07:43,381 [DEBUG]  Received user message 'goodbye' with intent '{'name': 'goodbye', 'confidence': 0.9167179465293884}' and entities '[]'
+2019-12-05 12:07:43,383 [DEBUG]  Logged UserUtterance - tracker now has 34 events
+2019-12-05 12:07:43,386 [DEBUG]  Current tracker state [{'prev_action_listen': 1.0, 'intent_request_certificate': 1.0}, {'prev_certificate_form': 1.0, 'intent_request_certificate': 1.0}, {'prev_action_listen': 1.0, 'intent_thankyou': 1.0}, {'prev_utter_noworries': 1.0, 'intent_thankyou': 1.0}, {'prev_action_listen': 1.0, 'intent_goodbye': 1.0}]
+2019-12-05 12:07:43,387 [DEBUG]  There is a memorised next action '11'
+2019-12-05 12:07:43,389 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:43,394 [DEBUG]  There is no active form
+2019-12-05 12:07:43,395 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:43,397 [DEBUG]  Predicted next action 'utter_goodbye' with confidence 1.00.
+2019-12-05 12:07:43,398 [DEBUG]  Action 'utter_goodbye' ended with events '['BotUttered(text: Bye!, data: {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, metadata: {})']'
+2019-12-05 12:07:43,834 [DEBUG]  Current tracker state [{'prev_certificate_form': 1.0, 'intent_request_certificate': 1.0}, {'prev_action_listen': 1.0, 'intent_thankyou': 1.0}, {'prev_utter_noworries': 1.0, 'intent_thankyou': 1.0}, {'prev_action_listen': 1.0, 'intent_goodbye': 1.0}, {'prev_utter_goodbye': 1.0, 'intent_goodbye': 1.0}]
+2019-12-05 12:07:43,835 [DEBUG]  There is a memorised next action '1'
+2019-12-05 12:07:43,837 [DEBUG]  NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+2019-12-05 12:07:43,843 [DEBUG]  There is no active form
+2019-12-05 12:07:43,844 [DEBUG]  There is no mapped action for the predicted intent, 'goodbye'.
+2019-12-05 12:07:43,845 [DEBUG]  Predicted next action using policy_0_MemoizationPolicy
+2019-12-05 12:07:43,846 [DEBUG]  Predicted next action 'action_restart' with confidence 1.00.
+2019-12-05 12:07:43,847 [DEBUG]  Action 'action_restart' ended with events '['Restarted()']'
+2019-12-05 12:07:43,848 [DEBUG]  Current slot values: 
+	certif_type: None
+	copies_num: None
+	dep_date: None
+	dep_date_half_day: None
+	details: None
+	end_date: None
+	end_date_half_day: None
+	endroit: None
+	langue: None
+	period: None
+	purpose: None
+	requested_slot: None
+2019-12-05 12:07:43,849 [DEBUG]  Predicted next action 'action_listen' with confidence 1.00.
+2019-12-05 12:07:43,850 [DEBUG]  Action 'action_listen' ended with events '[]'
+2019-12-05 12:07:43,852 [DEBUG]  Deleted lock for conversation 'UNSFW8BCK'.
